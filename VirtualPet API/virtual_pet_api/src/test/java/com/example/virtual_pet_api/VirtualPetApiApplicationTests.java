@@ -94,9 +94,4 @@ class VirtualPetApiApplicationTests {
 		assertEquals("MeowMix", result.getName(), "Should be MeowMix");
 	}
 
-	@Test
-	public void shouldGetOil() {
-		
-	}
-
 }
