@@ -40,11 +40,11 @@ public abstract class VirtualPet {
         this.happiness = happiness;
     }
 
-    public String getPetName() {
+    public String getName() {
         return this.name;
     }
 
-    public void setPetName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 

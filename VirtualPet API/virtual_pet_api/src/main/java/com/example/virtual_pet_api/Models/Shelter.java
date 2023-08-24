@@ -53,4 +53,12 @@ public class Shelter {
     @OneToMany(mappedBy = "shelter")
     private List<RoboticCat> roboticCats = new ArrayList<>();
 
+    //one shelter to many organic dogs
+    @OneToMany(mappedBy = "shelter")
+    private List<OrganicDog> organicDogs = new ArrayList<>();
+
+    //one shelter to many organic cats
+    @OneToMany(mappedBy = "shelter")
+    private List<OrganicCat> organicCats = new ArrayList<>();
+
 }
