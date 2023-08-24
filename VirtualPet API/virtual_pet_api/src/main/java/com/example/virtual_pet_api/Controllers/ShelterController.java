@@ -18,6 +18,7 @@ public class ShelterController {
     @Autowired
     private ShelterRepo shelterRepo;
 
+
     @GetMapping("/{id}")
     public Shelter getShelterById(@PathVariable long id) {
         return shelterRepo.findById(id).orElse(null);
@@ -27,4 +28,5 @@ public class ShelterController {
     public List<Shelter> getShelterByName(@PathVariable String name) {
         return shelterRepo.findByName(name);
     }
+
 }

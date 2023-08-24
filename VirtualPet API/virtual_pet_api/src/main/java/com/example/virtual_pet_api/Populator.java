@@ -41,7 +41,7 @@ public class Populator implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-        Shelter shelter1 = new Shelter("Shelter");
+        Shelter shelter1 = new Shelter("Humane Society");
         shelterRepo.save(shelter1);
 
         Volunteer volunteer1 = new Volunteer("Abigail");
@@ -64,5 +64,8 @@ public class Populator implements CommandLineRunner{
 
         OrganicCat organicCat1 = new OrganicCat(90, "MeowMix", "Black Cat", true, true, false);
         organicCatRepo.save(organicCat1);
+
+        // shelter1.addPet(organicCat1);
+        // shelterRepo.save(shelter1);
     }
 }
