@@ -1,9 +1,14 @@
 package com.example.virtual_pet_api.Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Shelter {
@@ -35,5 +40,17 @@ public class Shelter {
     public void setName(String name) {
         this.name = name;
     }
+
+    //many shelters to many volunteers
+    @ManyToMany(mappedBy = "shelters")
+    private List<Volunteer> volunteers = new ArrayList<>();
+
+    //one shelter to many robotic dogs
+    @OneToMany(mappedBy = "shelter")
+    private List<RoboticDog> roboticDogs = new ArrayList<>();
+
+    //one shelter to many robotic cats
+    @OneToMany(mappedBy = "shelter")
+    private List<RoboticCat> roboticCats = new ArrayList<>();
 
 }

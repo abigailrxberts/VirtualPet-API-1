@@ -12,15 +12,15 @@ public abstract class VirtualPet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private int happiness;
-    private String petName;
+    private String name;
     private String description;
 
     public VirtualPet() {
     }
 
-    public VirtualPet(int happiness, String petName, String description) {
+    public VirtualPet(int happiness, String name, String description) {
         this.happiness = happiness;
-        this.petName = petName;
+        this.name = name;
         this.description = description;
     }
 
@@ -41,11 +41,11 @@ public abstract class VirtualPet {
     }
 
     public String getPetName() {
-        return this.petName;
+        return this.name;
     }
 
-    public void setPetName(String petName) {
-        this.petName = petName;
+    public void setPetName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
