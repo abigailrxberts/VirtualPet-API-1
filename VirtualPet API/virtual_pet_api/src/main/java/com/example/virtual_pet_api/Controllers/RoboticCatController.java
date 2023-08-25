@@ -12,7 +12,7 @@ import com.example.virtual_pet_api.Models.RoboticCat;
 import com.example.virtual_pet_api.Repositories.RoboticCatRepo;
 
 @RestController
-@RequestMapping("/roboticCat")
+@RequestMapping("/roboticcat")
 public class RoboticCatController {
     @Autowired
     private RoboticCatRepo roboticCatRepo;
@@ -20,6 +20,11 @@ public class RoboticCatController {
     @GetMapping("/name/{name}")
     public List<RoboticCat> getRoboticCatByName(@PathVariable String name) {
         return roboticCatRepo.findByName(name);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<RoboticCat> getRoboticCatByDescription(@PathVariable String description) {
+        return roboticCatRepo.findByDescription(description);
     }
 
     @GetMapping("/{id}")

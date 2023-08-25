@@ -12,4 +12,6 @@ public interface OrganicDogRepo extends JpaRepository<OrganicDog, Long>{
     List<OrganicDog> findByIsFed(boolean isFed);
     List<OrganicDog> findByIsWatered(boolean isWatered);
     List<OrganicDog> findByIsCleanCage(boolean isCleanCage);
+    List<OrganicDog> findByHunger(int hunger);
+    List<OrganicDog> findByDescription(String description);
 }

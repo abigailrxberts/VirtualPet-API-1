@@ -12,7 +12,7 @@ import com.example.virtual_pet_api.Models.OrganicCat;
 import com.example.virtual_pet_api.Repositories.OrganicCatRepo;
 
 @RestController
-@RequestMapping("/organicCat")
+@RequestMapping("/organiccat")
 public class OrganicCatController {
     @Autowired
     private OrganicCatRepo organicCatRepo;
@@ -22,11 +22,15 @@ public class OrganicCatController {
         return organicCatRepo.findByName(name);
     }
 
+    @GetMapping("/description/{description}")
+    public List<OrganicCat> getOrganicCatByDescription(@PathVariable String description) {
+        return organicCatRepo.findByDescription(description);
+    }
+
     @GetMapping("/{id}")
     public OrganicCat getOrganicCatById(@PathVariable Long id) {
         return organicCatRepo.findById(id).orElse(null);
     }
-
 
     @GetMapping("/isFed/{isFed}")
     public List<OrganicCat> getOrganicCatByIsFed(@PathVariable boolean isFed) {
@@ -41,5 +45,10 @@ public class OrganicCatController {
     @GetMapping("/isCleanLitterBox/{isCleanLitterBox}")
     public List<OrganicCat> getOrganicCatByIsCleanLitterBox(@PathVariable boolean isCleanLitterBox) {
         return organicCatRepo.findByIsCleanLitterBox(isCleanLitterBox);
+    }
+
+    @GetMapping("/hunger/{hunger}")
+    public List<OrganicCat> getOrganicCatByHunger(@PathVariable int hunger) {
+        return organicCatRepo.findByHunger(hunger);
     }
 }

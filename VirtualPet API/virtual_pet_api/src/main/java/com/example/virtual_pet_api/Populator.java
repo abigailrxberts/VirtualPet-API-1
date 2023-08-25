@@ -44,28 +44,41 @@ public class Populator implements CommandLineRunner{
         Shelter shelter1 = new Shelter("Humane Society");
         shelterRepo.save(shelter1);
 
+        Shelter shelter2 = new Shelter("Bark Box");
+        shelterRepo.save(shelter2);
+
         Volunteer volunteer1 = new Volunteer("Abigail");
+        volunteer1.getShelters().add(shelter1);
         volunteerRepo.save(volunteer1);
 
+        Volunteer volunteer2 = new Volunteer("Henry");
+        volunteer2.getShelters().add(shelter1);
+        volunteer2.getShelters().add(shelter2);
+        volunteerRepo.save(volunteer2);
+
         RoboticDog roboticDog1 = new RoboticDog(50, "Rosie", "Grey Dog", false);
+        roboticDog1.setShelter(shelter1);
         roboticDogRepo.save(roboticDog1);
 
         RoboticDog roboticDog2 = new RoboticDog(72, "Princess", "Black Dog", true);
+        roboticDog2.setShelter(shelter1);
         roboticDogRepo.save(roboticDog2);
 
         RoboticCat roboticCat1 = new RoboticCat(25, "Timmy", "Tan Cat", true);
+        roboticCat1.setShelter(shelter1);
         roboticCatRepo.save(roboticCat1);
 
         RoboticCat roboticCat2 = new RoboticCat(30, "Marcel", "Spotted Cat", true);
+        roboticCat2.setShelter(shelter2);
         roboticCatRepo.save(roboticCat2);
 
-        OrganicDog organicDog1 = new OrganicDog(86, "Spot", "Spotted Dog", false, true, true, true);
+        OrganicDog organicDog1 = new OrganicDog(86, "Spot", "Spotted Dog", false, true, true, true, 76);
+        organicDog1.setShelter(shelter1);
         organicDogRepo.save(organicDog1);
 
-        OrganicCat organicCat1 = new OrganicCat(90, "MeowMix", "Black Cat", true, true, false);
+        OrganicCat organicCat1 = new OrganicCat(90, "MeowMix", "Black Cat", true, true, false, 37);
+        organicCat1.setShelter(shelter2);
         organicCatRepo.save(organicCat1);
 
-        // shelter1.addPet(organicCat1);
-        // shelterRepo.save(shelter1);
     }
 }

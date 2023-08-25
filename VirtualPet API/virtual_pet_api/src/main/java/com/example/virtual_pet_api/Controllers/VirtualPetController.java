@@ -10,7 +10,7 @@ import com.example.virtual_pet_api.Models.VirtualPet;
 import com.example.virtual_pet_api.Repositories.VirtualPetRepo;
 
 @RestController
-@RequestMapping("/virtualPet")
+@RequestMapping("/virtualpet")
 public class VirtualPetController {
     
     @Autowired

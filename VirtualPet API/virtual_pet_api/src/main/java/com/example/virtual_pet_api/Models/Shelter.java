@@ -41,23 +41,18 @@ public class Shelter {
         this.name = name;
     }
 
-    //many shelters to many volunteers
     @ManyToMany(mappedBy = "shelters")
     private List<Volunteer> volunteers = new ArrayList<>();
 
-    //one shelter to many robotic dogs
     @OneToMany(mappedBy = "shelter")
     private List<RoboticDog> roboticDogs = new ArrayList<>();
 
-    //one shelter to many robotic cats
     @OneToMany(mappedBy = "shelter")
     private List<RoboticCat> roboticCats = new ArrayList<>();
 
-    //one shelter to many organic dogs
     @OneToMany(mappedBy = "shelter")
     private List<OrganicDog> organicDogs = new ArrayList<>();
 
-    //one shelter to many organic cats
     @OneToMany(mappedBy = "shelter")
     private List<OrganicCat> organicCats = new ArrayList<>();
 

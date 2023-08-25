@@ -11,4 +11,6 @@ public interface OrganicCatRepo extends JpaRepository<OrganicCat, Long>{
     List<OrganicCat> findByIsFed(boolean isFed);
     List<OrganicCat> findByIsWatered(boolean isWatered);
     List<OrganicCat> findByIsCleanLitterBox(boolean isCleanLitterBox);
+    List<OrganicCat> findByHunger(int hunger);
+    List<OrganicCat> findByDescription(String description);
 }

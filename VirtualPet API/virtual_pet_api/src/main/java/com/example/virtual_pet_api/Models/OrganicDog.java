@@ -14,16 +14,18 @@ public class OrganicDog extends VirtualPet{
     private boolean isFed;
     private boolean isWatered;
     private boolean isCleanCage;
+    private int hunger;
 
     public OrganicDog() {
     }
 
-    public OrganicDog(int happiness, String name, String description, boolean isWalked, boolean isFed, boolean isWatered, boolean isCleanCage) {
+    public OrganicDog(int happiness, String name, String description, boolean isWalked, boolean isFed, boolean isWatered, boolean isCleanCage, int hunger) {
         super(happiness, name, description);
         this.isWalked = isWalked;
         this.isFed = isFed;
         this.isWatered = isWatered;
         this.isCleanCage = isCleanCage;
+        this.hunger = hunger;
     }
 
     public Shelter getShelter() {
@@ -80,6 +82,14 @@ public class OrganicDog extends VirtualPet{
 
     public void setIsCleanCage(boolean isCleanCage) {
         this.isCleanCage = isCleanCage;
+    }
+
+    public int getHunger() {
+        return this.hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
     }
 
 }

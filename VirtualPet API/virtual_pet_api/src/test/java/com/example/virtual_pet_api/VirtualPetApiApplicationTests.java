@@ -2,8 +2,6 @@ package com.example.virtual_pet_api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +11,6 @@ import com.example.virtual_pet_api.Controllers.OrganicDogController;
 import com.example.virtual_pet_api.Controllers.RoboticCatController;
 import com.example.virtual_pet_api.Controllers.RoboticDogController;
 import com.example.virtual_pet_api.Controllers.ShelterController;
-import com.example.virtual_pet_api.Controllers.VirtualPetController;
 import com.example.virtual_pet_api.Controllers.VolunteerController;
 import com.example.virtual_pet_api.Models.OrganicCat;
 import com.example.virtual_pet_api.Models.OrganicDog;
@@ -39,9 +36,6 @@ class VirtualPetApiApplicationTests {
 
 	@Autowired
 	private ShelterController shelterController;
-
-	@Autowired
-	private VirtualPetController virtualPetController;
 
 	@Autowired
 	private VolunteerController volunteerController;

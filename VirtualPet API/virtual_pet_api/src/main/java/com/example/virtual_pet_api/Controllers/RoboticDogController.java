@@ -12,7 +12,7 @@ import com.example.virtual_pet_api.Models.RoboticDog;
 import com.example.virtual_pet_api.Repositories.RoboticDogRepo;
 
 @RestController
-@RequestMapping("/roboticDog")
+@RequestMapping("/roboticdog")
 public class RoboticDogController {
     
     @Autowired
@@ -23,13 +23,17 @@ public class RoboticDogController {
         return roboticDogRepo.findByName(name);
     }
 
+    @GetMapping("/description/{description}")
+    public List<RoboticDog> getRoboticDogByDescription(@PathVariable String description) {
+        return roboticDogRepo.findByDescription(description);
+    }
+
     @GetMapping("/{id}")
     public RoboticDog getRoboticDogById(@PathVariable Long id) {
         return roboticDogRepo.findById(id).orElse(null);
     }
 
-    //check this later on Postman
-    @GetMapping("/name/{isOiled}")
+    @GetMapping("/isOiled/{isOiled}")
     public List<RoboticDog> getOilStatus(@PathVariable boolean isOiled) {
         return roboticDogRepo.findByIsOiled(isOiled);
     }

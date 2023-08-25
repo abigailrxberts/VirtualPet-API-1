@@ -12,7 +12,7 @@ import com.example.virtual_pet_api.Models.OrganicDog;
 import com.example.virtual_pet_api.Repositories.OrganicDogRepo;
 
 @RestController
-@RequestMapping("/organicDog")
+@RequestMapping("/organicdog")
 public class OrganicDogController {
     @Autowired
     private OrganicDogRepo organicDogRepo;
@@ -20,6 +20,11 @@ public class OrganicDogController {
     @GetMapping("/name/{name}")
     public List<OrganicDog> getOrganicDogByName(@PathVariable String name) {
         return organicDogRepo.findByName(name);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<OrganicDog> getOrganicDogByDescription(@PathVariable String description) {
+        return organicDogRepo.findByDescription(description);
     }
 
     @GetMapping("/{id}")
@@ -45,5 +50,10 @@ public class OrganicDogController {
     @GetMapping("/isCleanCage/{isCleanCage}")
     public List<OrganicDog> getOrganicDogByIsCleanCage(@PathVariable boolean isCleanCage) {
         return organicDogRepo.findByIsCleanCage(isCleanCage);
+    }
+
+    @GetMapping("/hunger/{hunger}")
+    public List<OrganicDog> getOrganicDogByHunger(@PathVariable int hunger) {
+        return organicDogRepo.findByHunger(hunger);
     }
 }
